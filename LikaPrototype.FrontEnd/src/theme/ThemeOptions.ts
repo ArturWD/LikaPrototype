@@ -12,5 +12,7 @@ export interface CustomThemeOptions {
         separatorDark?: React.CSSProperties['color'];
         accent?: React.CSSProperties['color'];
         danger?: React.CSSProperties['color'];
+        textTertiary?: React.CSSProperties['color'];
+        success?: React.CSSProperties['color'];
     };
 }

@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { AppProvider } from './store';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { themes } from './theme';
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+    <ThemeProvider theme={themes.themeLight}>
+        <React.StrictMode>
+            <AppProvider>
+                <Router>
+                    <App />
+                </Router>
+            </AppProvider>
+        </React.StrictMode>
+    </ThemeProvider>,
     document.getElementById('root')
 );
 

@@ -14,7 +14,7 @@ export const Light: ThemeOptions = {
     },
     palette: {
         primary: {
-            main: palette.blue,
+            main: palette.carrot,
         },
     },
     typography: {
@@ -30,11 +30,11 @@ export const Light: ThemeOptions = {
             fontWeight: 500,
         },
         h2: {
-            fontSize: 32,
+            fontSize: 28,
             fontWeight: 500,
         },
         h3: {
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: 500,
         },
         body1: {
@@ -52,14 +52,12 @@ export const Light: ThemeOptions = {
     },
     colors: {
         backgroundMain: palette.white,
-        backgroundSecondary: palette.darkWhite,
-        backgroundTertiary: palette.lightGrey,
-        backgroundAccent: palette.darkBlueWhite,
-        textMain: palette.blueBlack,
-        textSecondary: palette.blueLightGrey,
-        separatorLight: palette.lightGrey,
-        separatorDark: palette.lighterGrey,
-        accent: palette.blue,
-        danger: palette.red,
+        backgroundSecondary: palette.blueWhite,
+        textMain: palette.blueDarkGray,
+        textSecondary: palette.blueGrey,
+        textTertiary: palette.lighterGrey,
+        accent: palette.carrot,
+        danger: palette.carrotDark,
+        success: palette.carrotLeaf,
     },
 };
