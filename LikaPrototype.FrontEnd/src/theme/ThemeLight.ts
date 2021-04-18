@@ -28,31 +28,37 @@ export const Light: ThemeOptions = {
         h1: {
             fontSize: 40,
             fontWeight: 500,
+            color: palette.blueDarkGray,
         },
         h2: {
             fontSize: 28,
             fontWeight: 500,
+            color: palette.blueDarkGray,
         },
         h3: {
             fontSize: 20,
             fontWeight: 500,
+            color: palette.blueDarkGray,
         },
         body1: {
             fontSize: 16,
             fontWeight: 400,
+            color: palette.blueDarkGray,
         },
         body2: {
             fontSize: 14,
             fontWeight: 500,
+            color: palette.blueDarkGray,
         },
         caption: {
             fontSize: 12,
             fontWeight: 500,
+            color: palette.blueDarkGray,
         },
     },
     colors: {
-        backgroundMain: palette.white,
-        backgroundSecondary: palette.blueWhite,
+        backgroundMain: palette.blueWhite,
+        backgroundSecondary: palette.white,
         textMain: palette.blueDarkGray,
         textSecondary: palette.blueGrey,
         textTertiary: palette.lighterGrey,

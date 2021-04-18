@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/styles';
 import { Theme, Typography, LinearProgress } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 
-import logoFull from '../assets/icons/logoFull.svg';
+import logoFull from '../assets/logoFull.svg';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

@@ -24,17 +24,17 @@ const App: React.FunctionComponent = (props) => {
     useEffect(() => {
         const errorCallback = () => history.push(spaUrls.login());
         const successCallback = () => history.push(originalLocation.pathname);
-        history.push(spaUrls.progress());
+        history.push(spaUrls.loading());
         attemptAutomaticLogin(dispatch, errorCallback, successCallback);
     }, [dispatch, history]);
 
     if (!state.user.isAuthenticated) {
         return (
             <Switch>
-                <Route exact path={spaUrls.login()} component={LoginPage} />
-                <Route exact path={spaUrls.signup()} component={SignupPage} />
-                <Route path={spaUrls.progress()} component={LoadingPage} />
-                <Redirect to={spaUrls.progress()} />
+                <Route path={spaUrls.login()} component={LoginPage} />
+                <Route path={spaUrls.signup()} component={SignupPage} />
+                <Route path={spaUrls.loading()} component={LoadingPage} />
+                <Redirect to={spaUrls.login()} />
             </Switch>
         );
     } else {
@@ -42,7 +42,7 @@ const App: React.FunctionComponent = (props) => {
             <React.Suspense fallback={<LoadingPage />}>
                 <Switch>
                     <Route exact path={spaUrls.home()} component={HomePage} />
-                    <Route path={spaUrls.progress()} component={LoadingPage} />
+                    <Route path={spaUrls.loading()} component={LoadingPage} />
                     <Redirect to={spaUrls.home()} />
                 </Switch>
             </React.Suspense>

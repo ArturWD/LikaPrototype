@@ -3,9 +3,9 @@ import { createStyles, makeStyles } from '@material-ui/styles';
 import { CircularProgress, Theme, Typography } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 
-import logo from '../../assets/icons/logo.svg';
-import doubleCarrot from '../../assets/icons/doubleCarrot.svg';
-import simpleCarrot from '../../assets/icons/simpleCarrot.svg';
+import logo from '../../assets/logo.svg';
+import doubleCarrot from '../../assets/doubleCarrot.svg';
+import simpleCarrot from '../../assets/simpleCarrot.svg';
 
 import Container from './Container';
 import cn from 'classnames';

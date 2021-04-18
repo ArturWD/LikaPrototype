@@ -3,30 +3,48 @@ import { createStyles, makeStyles } from '@material-ui/styles';
 import { Theme, Typography, IconButton } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import cn from 'classnames';
 
 import {
     default as Breadcrumbs,
     IBreadcrumb,
 } from '../Breadcrumbs/Breadcrumbs';
 import { spaUrls } from '../../common/urls';
+import Container from './Container';
+import Navbar from '../Navbar';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '100%',
             minHeight: '100vh',
+            display: 'flex',
         },
         sidebarContainer: {
-            maxWidth: 720,
-            paddingLeft: 0,
-            paddingRight: 0,
+            flex: 'none',
+            width: 250,
+            boxShadow:
+                'rgb(0 0 0 / 3%) 0px 8px 32px, rgb(0 0 0 / 3%) 0px 4px 16px, rgb(0 0 0 / 3%) 0px 2px 8px, rgb(0 0 0 / 3%) 0px 1px 4px',
+            padding: theme.spacing(4),
+            backgroundColor: theme.colors.backgroundSecondary,
         },
-        mainContainer: {},
-        mainContentContainer: {},
+        mainContainer: {
+            flex: '1 1 auto',
+            paddingTop: theme.spacing(4),
+            paddingBottom: theme.spacing(4),
+        },
         breadcrumbsContainer: {},
-        headerContainer: {},
-        backButton: {},
+        headerContainer: {
+            display: 'flex',
+            alignItems: 'center',
+        },
+        backButton: {
+            marginRight: theme.spacing(2),
+            color: theme.colors.textMain,
+            transition: 'color 200ms ease-in-out',
+            '&:hover': {
+                color: theme.colors.accent,
+            },
+        },
         pageTitle: {},
     })
 );
@@ -58,17 +76,19 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = (props) => {
 
     return (
         <div className={classes.root}>
-            <aside className={classes.sidebarContainer}>sidebar with nav</aside>
-            <div className={classes.root}>
-                <main className={classes.root}>
+            <aside className={classes.sidebarContainer}>
+                <Navbar />
+            </aside>
+            <div className={classes.mainContainer}>
+                <Container>
                     {breadcrumbs && (
-                        <div className={classes.root}>
+                        <div className={classes.breadcrumbsContainer}>
                             <Breadcrumbs breadcrumbs={breadcrumbs} />
                         </div>
                     )}
 
                     <div className={classes.headerContainer}>
-                        {breadcrumbs && (
+                        {true && (
                             <IconButton
                                 className={classes.backButton}
                                 onClick={handleGoBackClick}
@@ -79,12 +99,13 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = (props) => {
                         <Typography
                             className={classes.pageTitle}
                             component="h1"
+                            variant="h2"
                         >
                             {pageTitle}
                         </Typography>
                     </div>
                     <div>{props.children}</div>
-                </main>
+                </Container>
             </div>
         </div>
     );
