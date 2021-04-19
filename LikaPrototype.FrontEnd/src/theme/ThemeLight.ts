@@ -59,11 +59,17 @@ export const Light: ThemeOptions = {
     colors: {
         backgroundMain: palette.blueWhite,
         backgroundSecondary: palette.white,
+        backgroundTertiary: palette.darkBlueWhite,
         textMain: palette.blueDarkGray,
+        textMainPale: palette.blueDarkGrayPale,
         textSecondary: palette.blueGrey,
+        textSecondaryPale: palette.blueGreyPale,
         textTertiary: palette.lighterGrey,
         accent: palette.carrot,
+        accentPale: palette.carrotPale,
         danger: palette.carrotDark,
+        dangerPale: palette.carrotDarkPale,
         success: palette.carrotLeaf,
+        successPale: palette.carrotLeafPale,
     },
 };

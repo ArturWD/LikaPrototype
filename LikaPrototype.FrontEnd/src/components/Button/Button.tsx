@@ -34,6 +34,7 @@ const Button: React.FunctionComponent<IButtonProps> = (props) => {
         outlined = false,
         forceActiveState = false,
         classes: propsClasses,
+        icon,
         ...otherProps
     } = props;
     const classes = useStyles({
@@ -41,13 +42,13 @@ const Button: React.FunctionComponent<IButtonProps> = (props) => {
         fill,
         outlined,
         forceActiveState,
-        disabled: props.disabled,
+        disabled: !!props.disabled,
         hasChildren: !!props.children,
     });
 
-    const children = props.children;
+    let children = props.children;
     if (typeof props.children === 'string') {
-        return (
+        children = (
             <Typography
                 className={cn(classes.buttonText, propsClasses?.text)}
                 variant="body2"
@@ -58,7 +59,9 @@ const Button: React.FunctionComponent<IButtonProps> = (props) => {
     }
     return (
         <ButtonBase
-            className={cn(classes.root, props.className, propsClasses?.root)}
+            classes={{
+                root: cn(classes.root, props.className, propsClasses?.root),
+            }}
             {...otherProps}
         >
             {props.icon && (

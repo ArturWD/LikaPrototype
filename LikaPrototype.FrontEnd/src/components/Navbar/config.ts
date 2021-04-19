@@ -54,15 +54,15 @@ export const navigationItems: NavigationItem[] = [
         icon: WriteIcon,
     },
     {
-        id: 'separator-1',
-        type: NavigationItemType.Separator,
-    },
-    {
         id: 'content',
         type: NavigationItemType.Link,
-        name: 'Content search',
+        name: 'Explore content',
         link: spaUrls.explore.explore(),
         icon: SearchIcon,
+    },
+    {
+        id: 'separator-1',
+        type: NavigationItemType.Separator,
     },
     {
         id: 'progress',

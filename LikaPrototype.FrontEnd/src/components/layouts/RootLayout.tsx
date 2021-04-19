@@ -12,6 +12,7 @@ import { spaUrls } from '../../common/urls';
 import Container from './Container';
 import Navbar from '../Navbar';
 
+const SIDEBAR_WIDTH = 250;
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -21,13 +22,18 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         sidebarContainer: {
             flex: 'none',
-            width: 250,
+            width: SIDEBAR_WIDTH,
             boxShadow:
                 'rgb(0 0 0 / 3%) 0px 8px 32px, rgb(0 0 0 / 3%) 0px 4px 16px, rgb(0 0 0 / 3%) 0px 2px 8px, rgb(0 0 0 / 3%) 0px 1px 4px',
             padding: theme.spacing(4),
             backgroundColor: theme.colors.backgroundSecondary,
+            height: '100vh',
+            position: 'fixed',
+            top: 0,
+            left: 0,
         },
         mainContainer: {
+            marginLeft: SIDEBAR_WIDTH,
             flex: '1 1 auto',
             paddingTop: theme.spacing(4),
             paddingBottom: theme.spacing(4),
@@ -88,7 +94,7 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = (props) => {
                     )}
 
                     <div className={classes.headerContainer}>
-                        {true && (
+                        {breadcrumbs && (
                             <IconButton
                                 className={classes.backButton}
                                 onClick={handleGoBackClick}

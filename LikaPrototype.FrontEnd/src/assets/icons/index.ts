@@ -5,3 +5,4 @@ export { HomeIcon } from './Home';
 export { ProgressIcon } from './Progress';
 export { SearchIcon } from './Search';
 export { WriteIcon } from './Write';
+export { LogoutIcon } from './Logout';

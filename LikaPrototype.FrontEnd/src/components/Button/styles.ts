@@ -1,5 +1,4 @@
 import { Theme, createStyles } from '@material-ui/core';
-
 export interface IButtonStylesProps {
     size: 'small' | 'medium' | 'large';
     fill: 'none' | 'fill';
@@ -25,7 +24,9 @@ export const styles = (theme: Theme) =>
                             : theme.spacing(1);
                     case 'medium':
                     default:
-                        return theme.spacing(2);
+                        return hasChildren
+                            ? theme.spacing(2)
+                            : theme.spacing(2);
                 }
             },
             borderRadius: ({ hasChildren }) =>
@@ -36,7 +37,7 @@ export const styles = (theme: Theme) =>
                     : theme.colors.backgroundSecondary,
             transition: 'all 300ms ease-in-out',
             '&:hover': {
-                backgroundColor: theme.colors.backgroundSecondary,
+                backgroundColor: theme.colors.successPale,
             },
             '& > *': {
                 flex: '1 1 auto',
@@ -55,7 +56,9 @@ export const styles = (theme: Theme) =>
                 }
             },
             color: ({ disabled }) =>
-                disabled ? theme.colors.textTertiary : 'initial',
+                disabled ? theme.colors.textTertiary : theme.colors.textMain,
+            textAlign: 'left',
+            fontWeight: 'bold',
         },
         iconWrapper: {
             flex: 'none',
@@ -66,12 +69,12 @@ export const styles = (theme: Theme) =>
             width: ({ size }) => {
                 switch (size) {
                     case 'large':
-                        return theme.spacing(8);
+                        return theme.spacing(7);
                     case 'small':
-                        return theme.spacing(5);
+                        return theme.spacing(4);
                     case 'medium':
                     default:
-                        return theme.spacing(6);
+                        return theme.spacing(5);
                 }
             },
             height: 'auto',
