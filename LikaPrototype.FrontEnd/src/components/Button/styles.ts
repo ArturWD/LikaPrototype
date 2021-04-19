@@ -33,7 +33,7 @@ export const styles = (theme: Theme) =>
                 hasChildren ? theme.spacing(4) : '50%',
             backgroundColor: ({ forceActiveState }) =>
                 forceActiveState
-                    ? theme.colors.backgroundMain
+                    ? theme.colors.successPale
                     : theme.colors.backgroundSecondary,
             transition: 'all 300ms ease-in-out',
             '&:hover': {

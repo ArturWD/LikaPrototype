@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import FaceIcon from '@material-ui/icons/Face';
-import { matchPath } from 'react-router';
+import { matchPath, useHistory } from 'react-router';
 import cn from 'classnames';
 
+import { spaUrls } from '../../common/urls';
 import Button from '../Button';
 import { LogoutIcon } from '../../assets/icons';
 import logo from '../../assets/logo.svg';
@@ -17,6 +18,14 @@ type NavbarProps = {
 };
 const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     const classes = useStyles();
+    const history = useHistory();
+
+    const handleNavigateItemClick = (to: string) => () => {
+        history.push(to);
+    };
+    const isCurrentPage = (path: string, exact = false): boolean => {
+        return !!matchPath(history.location.pathname, { path, exact });
+    };
     return (
         <div className={cn(classes.root, props.className)}>
             <img src={logo} alt="logo" className={classes.logo} />
@@ -29,12 +38,22 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
                                     key={item.id}
                                     className={classes.navbarItem}
                                     icon={<item.icon />}
+                                    onClick={handleNavigateItemClick(item.link)}
+                                    forceActiveState={isCurrentPage(
+                                        item.link,
+                                        !!item.matchExact
+                                    )}
                                 >
                                     {item.name}
                                 </Button>
                             );
                         case NavigationItemType.Separator:
-                            return <div className={classes.separator}></div>;
+                            return (
+                                <div
+                                    key={item.id}
+                                    className={classes.separator}
+                                ></div>
+                            );
                         default:
                             return null;
                     }
@@ -42,7 +61,12 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
             </nav>
 
             <div className={classes.bottomItems}>
-                <Button className={classes.navbarItem} icon={<FaceIcon />}>
+                <Button
+                    className={classes.navbarItem}
+                    icon={<FaceIcon />}
+                    onClick={handleNavigateItemClick(spaUrls.profile.profile())}
+                    forceActiveState={isCurrentPage(spaUrls.profile.profile())}
+                >
                     Profile
                 </Button>
                 <Button className={classes.navbarItem} icon={<LogoutIcon />}>

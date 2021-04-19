@@ -20,6 +20,7 @@ export type NavigationItem =
           type: NavigationItemType.Link;
           name: string;
           link: string;
+          matchExact?: boolean;
           icon: FC;
       }
     | { id: string; type: NavigationItemType.Separator };
@@ -30,6 +31,7 @@ export const navigationItems: NavigationItem[] = [
         type: NavigationItemType.Link,
         name: 'Home',
         link: spaUrls.home(),
+        matchExact: true,
         icon: HomeIcon,
     },
     {

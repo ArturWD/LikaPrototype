@@ -3,6 +3,9 @@ export const spaUrls = {
     login: () => '/login',
     signup: () => '/signup',
     home: () => '/',
+    profile: {
+        profile: () => '/profile',
+    },
     dictionary: {
         dictionary: () => '/dictionary',
     },

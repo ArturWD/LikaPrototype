@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: SIDEBAR_WIDTH,
             boxShadow:
                 'rgb(0 0 0 / 3%) 0px 8px 32px, rgb(0 0 0 / 3%) 0px 4px 16px, rgb(0 0 0 / 3%) 0px 2px 8px, rgb(0 0 0 / 3%) 0px 1px 4px',
-            padding: theme.spacing(4),
+            padding: theme.spacing(4, 6),
             backgroundColor: theme.colors.backgroundSecondary,
             height: '100vh',
             position: 'fixed',
