@@ -1,7 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import { matchPath } from 'react-router';
 import cn from 'classnames';
 
+import Button from '../Button';
 import logo from '../../assets/logo.svg';
 import { navigationItems, NavigationItemType } from './config';
 import styles from './styles';

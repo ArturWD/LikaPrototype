@@ -26,7 +26,7 @@ export type NavigationItem =
 
 export const navigationItems: NavigationItem[] = [
     {
-        id: 'home';
+        id: 'home',
         type: NavigationItemType.Link,
         name: 'Home',
         link: spaUrls.home(),

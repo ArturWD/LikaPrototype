@@ -4,7 +4,6 @@ import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import { useAppContext } from './store';
 import { spaUrls } from './common/urls';
 import { attemptAutomaticLogin } from './store/user';
-import RootLayout from './components/layouts/RootLayout';
 
 import LoadingPage from './pages/LoadingPage';
 import LoginPage from './pages/LoginPage';

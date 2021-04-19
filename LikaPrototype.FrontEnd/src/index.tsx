@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './store';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { themes } from './theme';
+
 ReactDOM.render(
     <ThemeProvider theme={themes.themeLight}>
         <React.StrictMode>
