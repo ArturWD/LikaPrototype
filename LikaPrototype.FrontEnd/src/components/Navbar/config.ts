@@ -7,6 +7,7 @@ import {
     WriteIcon,
     DictionaryIcon,
     HelpIcon,
+    AlphabetIcon,
 } from '../../assets/icons';
 import { spaUrls } from '../../common/urls';
 
@@ -46,6 +47,13 @@ export const navigationItems: NavigationItem[] = [
         type: NavigationItemType.Link,
         name: 'Vocabulary training',
         link: spaUrls.vocabulary.vocabulary(),
+        icon: AlphabetIcon,
+    },
+    {
+        id: 'reading',
+        type: NavigationItemType.Link,
+        name: 'Reading training',
+        link: spaUrls.reading.reading(),
         icon: BookIcon,
     },
     {

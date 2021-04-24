@@ -10,7 +10,6 @@ import Loader from './components/Loader';
 import LoadingPage from './pages/LoadingPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
-
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const DictionaryPage = React.lazy(() => import('./modules/dictionary/router'));
 const ExploreContentPage = React.lazy(
@@ -24,6 +23,9 @@ const ProfilePage = React.lazy(() => import('./modules/profile/router'));
 const ProgressPage = React.lazy(() => import('./modules/progress/router'));
 const VocabularyTrainingPage = React.lazy(
     () => import('./modules/vocabulary/router')
+);
+const ReadingTrainingPage = React.lazy(
+    () => import('./modules/reading/router')
 );
 
 const originalLocation = {
@@ -79,6 +81,11 @@ const App: React.FunctionComponent = (props) => {
                             exact
                             path={spaUrls.writing.writing()}
                             component={GrammarTrainingPage}
+                        />
+                        <Route
+                            exact
+                            path={spaUrls.reading.reading()}
+                            component={ReadingTrainingPage}
                         />
                         <Route
                             exact
