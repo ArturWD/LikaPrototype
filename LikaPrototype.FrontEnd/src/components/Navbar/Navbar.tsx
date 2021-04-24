@@ -4,6 +4,8 @@ import FaceIcon from '@material-ui/icons/Face';
 import { matchPath, useHistory } from 'react-router';
 import cn from 'classnames';
 
+import { useAppContext } from '../../store';
+import { logout } from '../../store/user';
 import { spaUrls } from '../../common/urls';
 import Button from '../Button';
 import { LogoutIcon } from '../../assets/icons';
@@ -19,10 +21,14 @@ type NavbarProps = {
 const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     const classes = useStyles();
     const history = useHistory();
-
+    const { dispatch } = useAppContext();
     const handleNavigateItemClick = (to: string) => () => {
         history.push(to);
     };
+    const handleLogoutClick = () => {
+        logout(dispatch);
+    };
+
     const isCurrentPage = (path: string, exact = false): boolean => {
         return !!matchPath(history.location.pathname, { path, exact });
     };
@@ -69,7 +75,11 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
                 >
                     Profile
                 </Button>
-                <Button className={classes.navbarItem} icon={<LogoutIcon />}>
+                <Button
+                    onClick={handleLogoutClick}
+                    className={classes.navbarItem}
+                    icon={<LogoutIcon />}
+                >
                     Logout
                 </Button>
             </div>

@@ -2,16 +2,16 @@ import React from 'react';
 import { createStyles } from '@material-ui/styles';
 import { makeStyles, Theme } from '@material-ui/core';
 
-import RootLayout from '../components/layouts/RootLayout';
+import PageLayout from '../../../components/layouts/PageLayout';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({}));
 
-const DictionaryPage: React.FunctionComponent = (props) => {
+const MainPage: React.FunctionComponent = (props) => {
     const classes = useStyles();
     return (
-        <RootLayout pageTitle="Dictionary">
+        <PageLayout pageTitle="Dictionary">
             <div>Dictionary page content</div>
-        </RootLayout>
+        </PageLayout>
     );
 };
-export default DictionaryPage;
+export default MainPage;

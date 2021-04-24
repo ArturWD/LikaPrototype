@@ -51,6 +51,7 @@ export const styles = (theme: Theme) =>
             fontSize: 14,
             fontWeight: 500,
             color: theme.colors.textMain,
+            backgroundColor: theme.colors.backgroundMain,
             border: 'none',
             '&::placeholder': {
                 color: theme.colors.textSecondary,

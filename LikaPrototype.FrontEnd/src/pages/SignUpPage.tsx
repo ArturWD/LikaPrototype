@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.colors.backgroundMain,
             fontWeight: theme.typography.fontWeightBold,
         },
+        submitButtonText: {
+            color: theme.colors.backgroundMain,
+        },
         errorAlert: {},
         secondaryText: {
             color: theme.colors.textSecondary,
@@ -214,7 +217,12 @@ const SignUpPage: React.FunctionComponent = (props) => {
                 )}
 
                 <ButtonBase type="submit" className={classes.submitButton}>
-                    <Typography variant="body1">Sign up</Typography>
+                    <Typography
+                        className={classes.submitButtonText}
+                        variant="body1"
+                    >
+                        Sign up
+                    </Typography>
                 </ButtonBase>
             </form>
         </LoginFormLayout>

@@ -2,16 +2,16 @@ import React from 'react';
 import { createStyles } from '@material-ui/styles';
 import { makeStyles, Theme } from '@material-ui/core';
 
-import RootLayout from '../components/layouts/RootLayout';
+import PageLayout from '../components/layouts/PageLayout';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({}));
 
 const Help: React.FunctionComponent = (props) => {
     const classes = useStyles();
     return (
-        <RootLayout pageTitle="Help">
+        <PageLayout pageTitle="Help">
             <div>Help page content</div>
-        </RootLayout>
+        </PageLayout>
     );
 };
 export default Help;

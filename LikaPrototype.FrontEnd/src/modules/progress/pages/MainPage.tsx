@@ -2,16 +2,16 @@ import React from 'react';
 import { createStyles } from '@material-ui/styles';
 import { makeStyles, Theme } from '@material-ui/core';
 
-import RootLayout from '../components/layouts/RootLayout';
+import PageLayout from '../../../components/layouts/PageLayout';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({}));
 
-const Progress: React.FunctionComponent = (props) => {
+const MainPage: React.FunctionComponent = (props) => {
     const classes = useStyles();
     return (
-        <RootLayout pageTitle="Progress analysis">
+        <PageLayout pageTitle="Progress analysis">
             <div>Progress page content</div>
-        </RootLayout>
+        </PageLayout>
     );
 };
-export default Progress;
+export default MainPage;

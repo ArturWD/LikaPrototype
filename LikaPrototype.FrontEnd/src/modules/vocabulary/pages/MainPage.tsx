@@ -2,16 +2,16 @@ import React from 'react';
 import { createStyles } from '@material-ui/styles';
 import { makeStyles, Theme } from '@material-ui/core';
 
-import RootLayout from '../components/layouts/RootLayout';
+import PageLayout from '../../../components/layouts/PageLayout';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({}));
 
-const VocabularyTraining: React.FunctionComponent = (props) => {
+const MainPage: React.FunctionComponent = (props) => {
     const classes = useStyles();
     return (
-        <RootLayout pageTitle="Vocabulary training">
+        <PageLayout pageTitle="Vocabulary training">
             <div>VocabularyTraining page content</div>
-        </RootLayout>
+        </PageLayout>
     );
 };
-export default VocabularyTraining;
+export default MainPage;
