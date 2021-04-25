@@ -26,18 +26,18 @@ export const Light: ThemeOptions = {
         fontWeightMedium: 500,
         fontWeightBold: 600,
         h1: {
-            fontSize: 40,
+            fontSize: 26,
             fontWeight: 500,
             color: palette.blueDarkGray,
         },
         h2: {
-            fontSize: 28,
-            fontWeight: 500,
+            fontSize: 20,
+            fontWeight: 600,
             color: palette.blueDarkGray,
         },
         h3: {
-            fontSize: 20,
-            fontWeight: 500,
+            fontSize: 16,
+            fontWeight: 600,
             color: palette.blueDarkGray,
         },
         body1: {

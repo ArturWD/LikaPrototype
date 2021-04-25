@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import FaceIcon from '@material-ui/icons/Face';
 import { matchPath, useHistory } from 'react-router';
@@ -30,8 +30,13 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     };
 
     const isCurrentPage = (path: string, exact = false): boolean => {
+        console.log('match');
         return !!matchPath(history.location.pathname, { path, exact });
     };
+    useEffect(() => {
+        console.log('update path');
+    }, [history]);
+    console.log('render');
     return (
         <div className={cn(classes.root, props.className)}>
             <img src={logo} alt="logo" className={classes.logo} />

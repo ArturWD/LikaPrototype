@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
         formTitle: {
             textAlign: 'center',
             fontWeight: 700,
+            fontSize: 40,
             marginBottom: theme.spacing(4),
             color: theme.colors.textMain,
             [theme.breakpoints.down(theme.breakpoints.values.lg)]: {

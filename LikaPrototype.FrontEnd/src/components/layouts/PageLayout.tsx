@@ -77,7 +77,7 @@ const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
                 <Typography
                     className={classes.pageTitle}
                     component="h1"
-                    variant="h2"
+                    variant="h1"
                 >
                     {pageTitle}
                 </Typography>

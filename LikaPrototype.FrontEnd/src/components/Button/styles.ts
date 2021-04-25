@@ -35,7 +35,7 @@ export const styles = (theme: Theme) =>
                 forceActiveState
                     ? theme.colors.successPale
                     : theme.colors.backgroundSecondary,
-            transition: 'all 300ms ease-in-out',
+            transition: 'all 200ms ease-in-out',
             '&:hover': {
                 backgroundColor: theme.colors.successPale,
             },
