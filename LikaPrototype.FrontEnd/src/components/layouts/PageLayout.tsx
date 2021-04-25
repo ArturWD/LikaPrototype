@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
         headerContainer: {
             display: 'flex',
             alignItems: 'center',
+            marginBottom: theme.spacing(6),
         },
         backButton: {
             marginRight: theme.spacing(2),

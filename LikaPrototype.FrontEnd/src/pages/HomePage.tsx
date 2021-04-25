@@ -5,6 +5,7 @@ import { makeStyles, Theme, Grid, Paper, Typography } from '@material-ui/core';
 import PageLayout from '../components/layouts/PageLayout';
 import SectionLayout from '../components/layouts/SectionLayout';
 import ExerciseCard from '../exercises/common/components/ExerciseCard';
+import { exercisesIds } from '../exercises';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,21 +38,44 @@ const HomePage: React.FunctionComponent = (props) => {
                 <Grid container spacing={4} alignItems="stretch">
                     <Grid item xs={4}>
                         <ExerciseCard
-                            exerciseId="buildSentences"
+                            exerciseId={exercisesIds.wordsSprintId}
                             className={classes.exerciseCard}
                         />
                     </Grid>
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}>item</Paper>
+                        <ExerciseCard
+                            exerciseId={exercisesIds.wordTranslationId}
+                            className={classes.exerciseCard}
+                        />
                     </Grid>
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}>item</Paper>
+                        <ExerciseCard
+                            exerciseId={exercisesIds.wordPairsId}
+                            className={classes.exerciseCard}
+                        />
                     </Grid>
                 </Grid>
             </SectionLayout>
-            <SectionLayout sectionTitle="Reading training"></SectionLayout>
-            <SectionLayout sectionTitle="Grammar training"></SectionLayout>
-            <SectionLayout sectionTitle="Explore content"></SectionLayout>
+            <SectionLayout sectionTitle="Reading training">
+                <Grid container spacing={4} alignItems="stretch">
+                    <Grid item xs={4}>
+                        <ExerciseCard
+                            exerciseId={exercisesIds.understandingQuizId}
+                            className={classes.exerciseCard}
+                        />
+                    </Grid>
+                </Grid>
+            </SectionLayout>
+            <SectionLayout sectionTitle="Grammar training">
+                <Grid container spacing={4} alignItems="stretch">
+                    <Grid item xs={4}>
+                        <ExerciseCard
+                            exerciseId={exercisesIds.buildSentencesId}
+                            className={classes.exerciseCard}
+                        />
+                    </Grid>
+                </Grid>
+            </SectionLayout>
         </PageLayout>
     );
 };

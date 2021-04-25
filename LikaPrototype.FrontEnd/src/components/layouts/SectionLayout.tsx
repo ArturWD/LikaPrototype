@@ -6,7 +6,9 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '100%',
-            margin: theme.spacing(4, 0),
+            '&:not(:last-child)': {
+                marginBottom: theme.spacing(6),
+            },
         },
         headerContainer: {
             display: 'flex',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/styles';
 import { Theme, ButtonBase, Typography } from '@material-ui/core';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { useHistory } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 boxShadow: '0px 4px 14px 3px rgba(34, 60, 80, 0.2)',
             },
         },
+        // compact styling
         rootCompact: {
             minHeight: 150,
             display: 'flex',
@@ -34,19 +36,49 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         iconCompact: {
             position: 'absolute',
-            height: 'calc(100% - 24px)',
-            right: theme.spacing(4),
-            bottom: theme.spacing(0),
+            height: 'calc(100% - 50px)',
+            right: theme.spacing(6),
+            bottom: theme.spacing(2),
+        },
+
+        // list styling
+        rootList: {
+            minHeight: 80,
+            display: 'flex',
+            alignItems: 'center',
+            '&:hover $iconChevron': {
+                transform: 'translateX(8px)',
+            },
+        },
+        iconList: {
+            width: theme.spacing(12),
+            marginRight: theme.spacing(4),
+            flex: 'none',
+        },
+        infoList: {
+            flex: '1 1 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'flex-start',
+            textAlign: 'left',
+        },
+        iconChevron: {
+            width: theme.spacing(8),
+            height: theme.spacing(8),
+            color: theme.colors.textSecondary,
+            marginLeft: theme.spacing(4),
+            flex: 'none',
+            transition: 'all 200ms ease-in',
         },
     })
 );
 
-export type ExerciswCardProps = {
+type ExerciseCardProps = {
     className?: string;
     variant?: 'compact' | 'list';
     exerciseId: string;
 };
-const ExerciswCard: React.FunctionComponent<ExerciswCardProps> = (props) => {
+const ExerciswCard: React.FunctionComponent<ExerciseCardProps> = (props) => {
     const classes = useStyles();
     const history = useHistory();
     const { variant = 'compact' } = props;
@@ -86,8 +118,18 @@ const ExerciswCard: React.FunctionComponent<ExerciswCardProps> = (props) => {
         return (
             <ButtonBase
                 onClick={handleCardClick}
-                className={cn(classes.root)}
-            ></ButtonBase>
+                className={cn(classes.root, classes.rootList, props.className)}
+            >
+                <img
+                    src={config.icon}
+                    alt={config.title}
+                    className={classes.iconList}
+                ></img>
+                <div className={classes.infoList}>
+                    <Typography variant="h3">{config.title}</Typography>
+                </div>
+                <ChevronRightIcon className={classes.iconChevron} />
+            </ButtonBase>
         );
     }
 };

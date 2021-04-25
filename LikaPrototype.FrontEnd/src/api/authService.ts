@@ -41,7 +41,7 @@ class AuthService {
     }
     // TODO: implement getting user data
     public async getUserData(): Promise<IUser | Error> {
-        await new Promise((resolve) => setTimeout(resolve, 2500));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         return {
             email: 'email@gmail.com',
         };
