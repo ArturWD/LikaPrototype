@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import FaceIcon from '@material-ui/icons/Face';
-import { matchPath, useHistory } from 'react-router';
+import { matchPath, useHistory, useLocation } from 'react-router';
 import cn from 'classnames';
 
 import { useAppContext } from '../../store';
@@ -21,6 +21,7 @@ type NavbarProps = {
 const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     const classes = useStyles();
     const history = useHistory();
+    const location = useLocation();
     const { dispatch } = useAppContext();
     const handleNavigateItemClick = (to: string) => () => {
         history.push(to);
@@ -30,13 +31,8 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     };
 
     const isCurrentPage = (path: string, exact = false): boolean => {
-        console.log('match');
-        return !!matchPath(history.location.pathname, { path, exact });
+        return !!matchPath(location.pathname, { path, exact });
     };
-    useEffect(() => {
-        console.log('update path');
-    }, [history]);
-    console.log('render');
     return (
         <div className={cn(classes.root, props.className)}>
             <img src={logo} alt="logo" className={classes.logo} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { createStyles } from '@material-ui/styles';
 import { makeStyles, Theme } from '@material-ui/core';
 
+import { spaUrls } from '../../common/urls';
 import PageLayout from '../../components/layouts/PageLayout';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,10 +12,19 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+const breadcrumbs = [
+    {
+        text: 'Vocabulary training',
+        link: spaUrls.vocabulary.vocabulary(),
+    },
+];
+
 const ExercisePage: React.FunctionComponent = (props) => {
     const classes = useStyles();
     return (
-        <PageLayout pageTitle="Word translation">Word translation</PageLayout>
+        <PageLayout breadcrumbs={breadcrumbs} pageTitle="Word translation">
+            Word translation
+        </PageLayout>
     );
 };
 export default ExercisePage;

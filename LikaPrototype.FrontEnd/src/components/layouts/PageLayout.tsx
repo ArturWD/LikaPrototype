@@ -60,17 +60,18 @@ const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
 
     return (
         <div className={classes.root}>
-            {breadcrumbs && (
+            {/* {breadcrumbs && (
                 <div className={classes.breadcrumbsContainer}>
                     <Breadcrumbs breadcrumbs={breadcrumbs} />
                 </div>
-            )}
+            )} */}
 
             <div className={classes.headerContainer}>
                 {breadcrumbs && (
                     <IconButton
                         className={classes.backButton}
                         onClick={handleGoBackClick}
+                        size="small"
                     >
                         <ArrowBack />
                     </IconButton>
