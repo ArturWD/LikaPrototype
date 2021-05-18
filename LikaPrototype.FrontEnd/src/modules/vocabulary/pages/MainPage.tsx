@@ -13,10 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 const EXERCISES = [
-    exercisesIds.translationWordId,
     exercisesIds.wordTranslationId,
     exercisesIds.wordsSprintId,
     exercisesIds.wordPairsId,
+    exercisesIds.translationWordId,
 ];
 const MainPage: React.FunctionComponent = (props) => {
     const classes = useStyles();

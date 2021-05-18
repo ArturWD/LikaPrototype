@@ -25,6 +25,13 @@ import {
     EXERCISE_ID as understandingQuizId,
 } from './understandingQuiz';
 
+import TranslationWordPage from './translationWord/ExercisePage';
+import WordTranslationPage from './wordTranslation/ExercisePage';
+import WordsSprint from './wordsSprint/ExercisePage';
+import UnderstandingQuiz from './understandingQuiz/ExercisePage';
+import WordPairsPage from './wordPairs/ExercisePage';
+import BuildSentencesPage from './buildSentences/ExercisePage';
+
 export const exercisesMap = new Map<string, IExerciseConfig>([
     [buildSentencesId, buildSentencesConfig],
     [translationWordId, translationWordConfig],
@@ -32,6 +39,15 @@ export const exercisesMap = new Map<string, IExerciseConfig>([
     [wordPairsId, wordPairsConfig],
     [wordsSprintId, wordsSprintConfig],
     [understandingQuizId, understandingQuizConfig],
+]);
+
+export const exercisePagesMap = new Map<string, React.FunctionComponent>([
+    [buildSentencesId, BuildSentencesPage],
+    [translationWordId, TranslationWordPage],
+    [wordTranslationId, WordTranslationPage],
+    [wordPairsId, WordPairsPage],
+    [wordsSprintId, WordsSprint],
+    [understandingQuizId, UnderstandingQuiz],
 ]);
 
 export const exercisesIds = {

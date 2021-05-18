@@ -2,7 +2,7 @@ import { spaUrls } from '../../common/urls';
 import exerciseIcon from '../../assets/exercise/wordTranslation.svg';
 import { IExerciseConfig } from '../common/types/exerciseConfig';
 
-export const EXERCISE_ID = 'wordTranslatio';
+export const EXERCISE_ID = 'wordTranslation';
 
 export const exerciseConfig: IExerciseConfig = {
     id: EXERCISE_ID,

@@ -68,45 +68,34 @@ const App: React.FunctionComponent = (props) => {
                             component={LoadingPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.dictionary.dictionary()}
                             component={DictionaryPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.vocabulary.vocabulary()}
                             component={VocabularyTrainingPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.writing.writing()}
                             component={GrammarTrainingPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.reading.reading()}
                             component={ReadingTrainingPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.explore.explore()}
                             component={ExploreContentPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.progress.progress()}
                             component={ProgressPage}
                         />
                         <Route
-                            exact
                             path={spaUrls.profile.profile()}
                             component={ProfilePage}
                         />
-                        <Route
-                            exact
-                            path={spaUrls.help()}
-                            component={HelpPage}
-                        />
+                        <Route path={spaUrls.help()} component={HelpPage} />
                         <Redirect to={spaUrls.home()} />
                     </Switch>
                 </React.Suspense>

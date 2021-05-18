@@ -1,5 +1,5 @@
 import { spaUrls } from '../../common/urls';
-import exerciseIcon from '../../assets/exercise/quiz.svg';
+import exerciseIcon from '../../assets/exercise/translationWord.svg';
 import { IExerciseConfig } from '../common/types/exerciseConfig';
 
 export const EXERCISE_ID = 'translationWord';
